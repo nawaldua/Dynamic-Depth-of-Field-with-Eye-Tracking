@@ -10,7 +10,7 @@ Students: ndkelkar@wisc.edu, suchithsures@wisc.edu, ndua2@wisc.edu
 Professor: matthew.malloy@wisc.edu
 
 
-![](Example video.mp4)
+![](example_gif.gif)
 
 
 ## Description
