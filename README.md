@@ -46,5 +46,5 @@ To learn more about the project you can look at our [Project Proposal](Group1-Fi
 
 ## Credits
 
-TODO: Credit all the diffierent resources we used
+- Google's Mannequin Challenge [Dataset](https://google.github.io/mannequinchallenge/www/download.html) and [Depth Mapping Code](https://github.com/google/mannequinchallenge)
 
