@@ -5,7 +5,8 @@ from tkinter import filedialog as fd
 import sys
 from guifuncts import browse_directory,view,preview
 from application import application
-import blurproc
+from iploader import read_inputs
+from blurproc import foccal,newmaskimg,renderopfast
 def main():
 	#Set up GUI
 	window = tk.Tk()  #Makes main window
@@ -13,11 +14,14 @@ def main():
 	window.config(background="#FFFFFF")
 
 	global lbl1
+	print("lbl here")
 	lbl1 = tk.StringVar()
+	print("tk here")
 	lbl1.set("Choose the required Directory")
 
 	# Button to choose Video directory with the .jpg and .npy files
-	but_direc = tk.Button(window, text = "Directory", width = 10, command = browse_directory)
+	print(lbl1)
+	but_direc = tk.Button(window, text = "Directory", width = 10, command = lambda: browse_directory(lbl1))
 	but_direc.grid(row=0, column=1)
 
 	# Label to dynamically display the current directory    

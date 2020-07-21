@@ -3,11 +3,13 @@ from tqdm import tqdm
 import tkinter as tk
 from tkinter import filedialog as fd
 import sys
+from outputfuncs import mouse_move,output_win,genpreview,preview_win
 
-def browse_directory():
+def browse_directory(lbl1):
     # Allow user to select a directory and store it in global var
     # called dirr
     global dirr
+    #print(lbl1)
     dirr = fd.askdirectory()
     lbl1.set(dirr)
 
@@ -17,7 +19,7 @@ def view():
     view_win.title("Video Parameters")
     
     # Button to Pre-process and Run application
-    runApp_but = tk.Button(view_win, text = "Process Video", width = 10, command = Application)
+    runApp_but = tk.Button(view_win, text = "Process Video", width = 10, command = application)
     runApp_but.grid(row=1, column=0)
     
     # Button to display output
