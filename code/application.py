@@ -1,4 +1,4 @@
-def Application():
+def application():
     global img, arr1
     img = cv.imread(dirr + '/00000.jpg')
     arr1 = np.load(dirr + '/00000.npy')  
