@@ -1,3 +1,9 @@
+import glob
+from tqdm import tqdm
+import tkinter as tk
+from tkinter import filedialog as fd
+import sys
+
 def browse_directory():
     # Allow user to select a directory and store it in global var
     # called dirr
