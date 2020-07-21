@@ -4,16 +4,18 @@ import tkinter as tk
 from tkinter import filedialog as fd
 import sys
 from outputfuncs import mouse_move,output_win,genpreview,preview_win
-
-def browse_directory(lbl1):
-    # Allow user to select a directory and store it in global var
-    # called dirr
-    global dirr
+import globalvars
+from application import application
+def browse_directory():
+    # Allow user to select a directory and store it in 
+    # called globalvars.dirr
+    
     #print(lbl1)
-    dirr = fd.askdirectory()
-    lbl1.set(dirr)
+    globalvars.dirr = fd.askdirectory()
+    globalvars.lbl1.set(globalvars.dirr)
 
-def view():
+
+def view(window):
     # Initializing the display window
     view_win = tk.Toplevel()
     view_win.title("Video Parameters")
@@ -34,7 +36,7 @@ def view():
     quitApp_but.grid(row=6, column=0)
         
 
-def preview():
+def preview(window):
     # Initializing the display window
     pv_win = tk.Toplevel()
     pv_win.title("Preview Parameters")
@@ -42,15 +44,15 @@ def preview():
     input1 = tk.Label(pv_win, text = "Choose the blur level")
     input1.grid(row=0, column=0)
     
-    global blurVariable
-    blurVariable = tk.StringVar(pv_win)
-    blurVariable.set(6) # default value
+    
+    globalvars.blurVariable = tk.StringVar(pv_win)
+    globalvars.blurVariable.set(6) # default value
 
-    blurOption = tk.OptionMenu(pv_win, blurVariable, 2, 6, 10, 20, 30, 40, 50, 100)
+    blurOption = tk.OptionMenu(pv_win, globalvars.blurVariable, 2, 6, 10, 20, 30, 40, 50, 100)
     blurOption.grid(row=0, column=1)
         
     # Button to display preview
-    generate_but = tk.Button(pv_win, text = "Generate", width = 10, command = preview_win)
+    generate_but = tk.Button(pv_win, text = "Generate", width = 10, command =preview_win)
     generate_but.grid(row=2, column=0)
     
     # Button to close and destroy current window

@@ -1,18 +1,21 @@
+import cv2 as cv
+import globalvars
+import numpy as np
+from iploader import read_inputs
+from blurproc import foccal,newmaskimg,renderopfast
+import time
 def mouse_move(event,x,y,flags, param):
-    global posx, posy
+    
     if event == cv.EVENT_MOUSEMOVE:
-        posx = x
-        posy = y
+        globalvars.posx = x
+        globalvars.posy = y
 
 
 # Display Function
 def output_win():
-    global posx, posy
-    posx = 0
-    posy = 0
+    globalvars.posx = 0
+    globalvars.posy = 0
     
-    outputarray = opimarr
-    luptable = opluptable
     
     cv.namedWindow('output')
     
@@ -22,30 +25,30 @@ def output_win():
     # Moving along height is y value
     # table[frame_index][row or y][col or x]
     
-    frame = outputarray[0][9]
+    frame = globalvars.opimarr[0][9]
     i = 0
     blur_area = 9
     comp_var = 9
     
-    font = cv.FONT_HERSHEY_SIMPLEX 
+    font = cv.FONT_HERSHEY_SIMPLEX
     fontScale = 1
     color = (0, 0, 255)
     thickness = 2
     
-#     print(len(imarr))
+#     print(len(globalvars.imarr))
         
-    while(i < len(imarr)):
+    while(i < len(globalvars.imarr)):
 
-        frame = outputarray[i][blur_area]
+        frame = globalvars.opimarr[i][blur_area]
         cv.imshow('output',frame)        
         time.sleep(0.04)
 
         i += 1
 
-        if i == len(imarr):
+        if i == len(globalvars.imarr):
             i = 0
 
-        comp_var = np.uint8(luptable[i][posy][posx])
+        comp_var = np.uint8(globalvars.opluptable[i][globalvars.posy][globalvars.posx])
 
         if comp_var < 10:
             blur_area = comp_var
@@ -60,12 +63,12 @@ def output_win():
 
 def genpreview(blurfac):
     
-    global img, arr1
-    img = cv.imread(dirr + '/00000.jpg')
-    arr1 = np.load(dirr + '/00000.npy')
     
-    global imarr
-    imarr, npyarr = read_inputs()
+    globalvars.img = cv.imread(globalvars.dirr + '/(01).jpg')
+    globalvars.arr1 = np.load(globalvars.dirr + '/(01).npy')
+    
+    
+    globalvars.imarr, npyarr = read_inputs()
     
     minar=np.min(npyarr[0])
     step=np.round((np.max(npyarr[0])-np.min(npyarr[0]))/10,3)
@@ -74,20 +77,20 @@ def genpreview(blurfac):
     for i in range(10):
         blarrs.append(foccal(minar+i*step, step, minar))
         
-    global opims, lup_tab
+    
 
-    blurimages,masks, lup_tab=newmaskimg(imarr[0], npyarr[0], blurfac)
-    opims=renderopfast(blurimages,blarrs,imarr[0], masks)
+    blurimages,masks, globalvars.lup_tab=newmaskimg(globalvars.imarr[0], npyarr[0], blurfac)
+    globalvars.opims=renderopfast(blurimages,blarrs,globalvars.imarr[0], masks)
     return
 
 def preview_win():
-    blurfac = int(blurVariable.get())
+    blurfac = int(globalvars.blurVariable.get())
 #     print(blurVariable.get())
     genpreview(blurfac)
     
-    global posx, posy
-    posx = 0
-    posy = 0
+    
+    globalvars.posx = 0
+    globalvars.posy = 0
     
     cv.namedWindow('Preview output')
     #cv.resizeWindow('output', 600,600)
@@ -107,11 +110,11 @@ def preview_win():
     
     while(i == 0):
             
-        frame = opims[blur_area]
+        frame = globalvars.opims[blur_area]
         cv.imshow('Preview output',frame)        
 #         time.sleep(0.04)
             
-        comp_var = np.uint8(lup_tab[posy][posx])
+        comp_var = np.uint8(globalvars.lup_tab[globalvars.posy][globalvars.posx])
 
         if comp_var < 10:
             blur_area = comp_var

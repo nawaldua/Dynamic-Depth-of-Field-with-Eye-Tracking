@@ -7,6 +7,7 @@ from time import sleep
 import random
 import glob
 from tqdm import tqdm
+import globalvars
 
 def foccal(pt, step, minar):
     stepar=[]
@@ -55,7 +56,7 @@ def newmaskimg(image,array, blurparam):
 #     print(brack)
     
     masks=[]
-    temp_table = np.zeros((img.shape[0],img.shape[1]))
+    temp_table = np.zeros((globalvars.img.shape[0],globalvars.img.shape[1]))
     for i in range(0,10):
         newarr=copy.copy(array)
         newarr[np.where(newarr>brack[i][1])]=0
@@ -63,12 +64,15 @@ def newmaskimg(image,array, blurparam):
         newarr[np.where(newarr>0)]=1
         #mask=np.zeros(image.shape)
         #  print(mask[:,:,0].shape)
-        resized = cv.resize(newarr, (img.shape[1],img.shape[0]), interpolation = cv.INTER_AREA)
+        resized = cv.resize(newarr, (globalvars.img.shape[1],globalvars.img.shape[0]), interpolation = cv.INTER_AREA)
 #         print(resized.shape)
 #         temp_table += i*resized[:,:,0]
-        temp_table += i*resized
-        mask=np.dstack([resized,resized,resized])
-        #print('mask',mask.shape)
+        temp_table += i*resized[:,:,0]
+        if resized.shape[2]!=3:
+            mask=np.dstack([resized,resized,resized])
+        else:
+            mask=resized    
+                        #print('mask',mask.shape)
         masks.append(mask)
         
     imar=[]
