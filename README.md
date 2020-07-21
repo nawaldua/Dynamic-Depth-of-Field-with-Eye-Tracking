@@ -1,4 +1,13 @@
 # Please only review /code/blurproc.py for this code review :)
+# to run the program, download the repo, and execute the main.py file
+
+
+
+
+
+
+
+
 
 
 # Dynamic-Depth-of-Field-with-Eye-Tracking
