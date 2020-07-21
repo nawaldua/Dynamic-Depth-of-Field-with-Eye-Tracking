@@ -1,3 +1,6 @@
+# Please only review /code/blurproc.py for this code review :)
+
+
 # Dynamic-Depth-of-Field-with-Eye-Tracking
 ### ECE697 - Capstone Project
 
