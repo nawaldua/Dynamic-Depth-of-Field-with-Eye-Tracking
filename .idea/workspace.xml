@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="2ce2fffe-c5ce-4e06-9af3-e8f89e36c3dc" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Suchith &lt;suchithsuresh@users.github.com&gt;" />
+      </list>
+    </option>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="for_peer_review" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1f0wPa059cGsNBRgWeTMZIShp05" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RunManager">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Dynamic-Depth-of-Field-with-Eye-Tracking" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/code" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/code/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.main" />
+        <item itemvalue="Python.main" />
+        <item itemvalue="Python.main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2ce2fffe-c5ce-4e06-9af3-e8f89e36c3dc" name="Default Changelist" comment="" />
+      <created>1595368294845</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1595368294845</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Updated blurproc, minor changes">
+      <created>1595377203430</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1595377203430</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Minor changes, Improving readability">
+      <created>1595379225383</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1595379225383</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Updated blurproc, minor changes" />
+    <MESSAGE value="Minor changes, Improving readability" />
+    <option name="LAST_COMMIT_MESSAGE" value="Minor changes, Improving readability" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="845" y="403" key="#Notifications" timestamp="1595378296835">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="845" y="403" key="#Notifications/0.0.1920.1080@0.0.1920.1080" timestamp="1595378296835" />
+    <state x="586" y="108" key="CommitChangelistDialog2" timestamp="1595379224703">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="586" y="108" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1595379224703" />
+    <state x="740" y="295" key="FileChooserDialogImpl" timestamp="1595378476409">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="740" y="295" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1595378476409" />
+    <state width="1899" height="295" key="GridCell.Tab.0.bottom" timestamp="1595377076970">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1899" height="295" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1595377076970" />
+    <state width="1899" height="295" key="GridCell.Tab.0.center" timestamp="1595377076970">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1899" height="295" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1595377076970" />
+    <state width="1899" height="295" key="GridCell.Tab.0.left" timestamp="1595377076970">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1899" height="295" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1595377076970" />
+    <state width="1899" height="295" key="GridCell.Tab.0.right" timestamp="1595377076970">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1899" height="295" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1595377076970" />
+    <state x="184" y="90" key="MergeDialog" timestamp="1595378249149">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="184" y="90" key="MergeDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1595378249149" />
+    <state x="461" y="185" key="SettingsEditor" timestamp="1595370226892">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="461" y="185" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1595370226892" />
+    <state x="92" y="92" width="1736" height="896" key="ShowDiffWithBranchDialog" timestamp="1595377280730">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="92" y="92" width="1736" height="896" key="ShowDiffWithBranchDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1595377280730" />
+    <state x="552" y="273" key="Vcs.Push.Dialog.v2" timestamp="1595380150335">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="552" y="273" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1595380150335" />
+    <state x="769" y="454" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1595378796861">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="769" y="454" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1080@0.0.1920.1080" timestamp="1595378796861" />
+    <state x="707" y="253" key="git4idea.branch.GitSmartOperationDialog" timestamp="1595378226828">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="707" y="253" key="git4idea.branch.GitSmartOperationDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1595378226828" />
+    <state x="591" y="328" key="git4idea.merge.GitPullDialog" timestamp="1595370147945">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="591" y="328" key="git4idea.merge.GitPullDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1595370147945" />
+  </component>
+</project>
