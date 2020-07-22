@@ -25,7 +25,7 @@ looks at.
 ## Instructions
 
 ### Generating Depth Maps
-To get the premade depth maps that work with out code, go to Google's Mannequin Challenge [repository](https://github.com/google/mannequinchallenge) and download and follow their [setup instructions](https://github.com/google/mannequinchallenge#setup). Replace the ``` run_and_save_DAVIS ``` method in ```mannequinchallenge/models/pix2pix_model.py``` by the code in [pix2pix_replacement.py]()
+To get the premade depth maps that work with out code, go to Google's Mannequin Challenge [repository](https://github.com/google/mannequinchallenge) and download and follow their [setup instructions](https://github.com/google/mannequinchallenge#setup). Replace the ``` run_and_save_DAVIS ``` method in ```mannequinchallenge/models/pix2pix_model.py``` by the code in [pix2pix_replacement.py](https://github.com/nawaldua/Dynamic-Depth-of-Field-with-Eye-Tracking/blob/master/code/pix2pix_replacement.py)
 
 Comment and uncomment the parts of the replacement code as neccesary.
 
