@@ -22,9 +22,19 @@ With these refocusable videos, we can simulate human vision but with a more cine
 eye tracking technology where the video will place more emphasis on whichever subject a viewer
 looks at.
 
-## Installation
+## Instructions
 
-TODO: Information about instalation goes here
+### Generating Depth Maps
+To get the premade depth maps that work with out code, go to Google's Mannequin Challenge [repository](https://github.com/google/mannequinchallenge) and download and follow their [setup instructions](https://github.com/google/mannequinchallenge#setup). Replace the ``` run_and_save_DAVIS ``` method in ```mannequinchallenge/models/pix2pix_model.py``` by the code in [pix2pix_replacement.py](https://github.com/nawaldua/Dynamic-Depth-of-Field-with-Eye-Tracking/blob/master/code/pix2pix_replacement.py)
+
+Comment and uncomment the parts of the replacement code as neccesary.
+
+To get the depth maps, follow the run [instructions](https://github.com/google/mannequinchallenge#single-view-inference) on google's repo.
+
+### Dynamic Depth of Field
+
+Download this repository and run ```/code/main.py```
+
 
 ## Usage
 
