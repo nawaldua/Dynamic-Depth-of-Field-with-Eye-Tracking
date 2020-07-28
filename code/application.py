@@ -8,8 +8,10 @@ import os
 
 
 def application():
-    globalvars.img = cv.imread(globalvars.dirr + '/(01).jpg')
-    globalvars.arr1 = np.load(globalvars.dirr + '/(01).npy')
+    globalvars.img = cv.imread(globalvars.dirr + '/data/00000.jpg')
+    globalvars.arr1 = np.load(globalvars.dirr + '/data/00000.npy')
+
+    blur_factor = int(globalvars.blurVariableMain.get())
 
     if not globalvars.imarr:
         read_inputs()
@@ -23,9 +25,9 @@ def application():
 
     globalvars.opimarr = []
     globalvars.opluptable = []
-    for index in tqdm(range(len(globalvars.imarr)), unit="Frames", desc="Processing"):
+    for index in tqdm(range(len(globalvars.imarr)), unit="Frame(s)", desc="Processing"):
 
-        blurimages, masks, lup_tab = newmaskimg(globalvars.imarr[index], globalvars.npyarr[index], 6)
+        blurimages, masks, lup_tab = newmaskimg(globalvars.imarr[index], globalvars.npyarr[index], blur_factor)
 
         # Per Frame image output
         opims = renderopfast(blurimages, blarrs, globalvars.imarr[index], masks)
