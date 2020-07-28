@@ -1,14 +1,7 @@
-import glob
-from tqdm import tqdm
 import tkinter as tk
-from tkinter import filedialog as fd
-import sys
-from guifuncts import browse_directory, view, preview
-from application import application
-from iploader import read_inputs
-from blurproc import foccal, newmaskimg, renderopfast
-import cv2 as cv
+
 import globalvars
+from guifuncts import browse_directory, view, preview
 
 
 def main():
@@ -18,13 +11,10 @@ def main():
     window.wm_title("Focus_GUI: Root Window")
     window.config(background="#FFFFFF")
 
-    print("lbl here")
     globalvars.lbl1 = tk.StringVar()
-    print("tk here")
     globalvars.lbl1.set("Choose the required Directory")
 
     # Button to choose Video directory with the .jpg and .npy files
-    print(globalvars.lbl1)
     but_direc = tk.Button(window, text="Directory", width=10, command=browse_directory)
     but_direc.grid(row=0, column=1)
 

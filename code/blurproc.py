@@ -1,12 +1,9 @@
-import cv2 as cv
-import numpy as np
 import copy
 import math
-from time import sleep
-import random
-import glob
-from tqdm import tqdm
+
+import cv2 as cv
 import globalvars
+import numpy as np
 
 
 def foccal(pt, step, minar):
@@ -26,19 +23,17 @@ def foccal(pt, step, minar):
     focar = np.round(np.max(foclist) - foclist)
     for i in range(0, 10):
         gpar.append(2 * int(focar[i]) + 1)
-    return (gpar)
+    return gpar
 
 
 def newmaskimg(image, array, blurparam):
     step = np.round((np.max(array) - np.min(array)) / 10, 3)
     minar = np.min(array)
 
-
     stepar = []
     for i in range(1, 12):
         x = minar + (i - 1) * step
         stepar.append(x)
-
 
     brack = []
     for i in range(0, 10):
@@ -52,7 +47,7 @@ def newmaskimg(image, array, blurparam):
         newarr[np.where(newarr > brack[i][1])] = 0
         newarr[np.where(newarr < brack[i][0])] = 0
         newarr[np.where(newarr > 0)] = 1
-        
+
         resized = cv.resize(newarr, (globalvars.img.shape[1], globalvars.img.shape[0]), interpolation=cv.INTER_AREA)
 
         temp_table += i * resized[:, :, 0]
@@ -67,7 +62,7 @@ def newmaskimg(image, array, blurparam):
     for i in range(4):
         imar.append(cv.GaussianBlur(image, (blurparam * i + 1, blurparam * i + 1), 0))
 
-    return (imar, masks, temp_table)
+    return imar, masks, temp_table
 
 
 def renderopfast(blimg, blarray, image, masks):
@@ -86,4 +81,4 @@ def renderopfast(blimg, blarray, image, masks):
 
         oparray.append(recons)
 
-    return (np.uint8(oparray))
+    return np.uint8(oparray)

@@ -1,15 +1,13 @@
-import glob
-from tqdm import tqdm
 import tkinter as tk
 from tkinter import filedialog as fd
-import sys
-from outputfuncs import mouse_move, output_win, genpreview, preview_win
+
 import globalvars
 from application import application
+from outputfuncs import output_win, preview_win
 
 
 def browse_directory():
-    # Allow user to select a directory and store it in 
+    # Allow user to select a directory and store it in a global variable
     # called globalvars.dirr
 
     globalvars.dirr = fd.askdirectory()
