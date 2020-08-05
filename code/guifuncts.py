@@ -1,15 +1,13 @@
-import glob
-from tqdm import tqdm
 import tkinter as tk
 from tkinter import filedialog as fd
-import sys
-from outputfuncs import mouse_move, output_win, genpreview, preview_win
+
 import globalvars
 from application import application
+from outputfuncs import output_win, preview_win
 
 
 def browse_directory():
-    # Allow user to select a directory and store it in 
+    # Allow user to select a directory and store it in a global variable
     # called globalvars.dirr
 
     globalvars.dirr = fd.askdirectory()
@@ -20,6 +18,19 @@ def view(window):
     # Initializing the display window
     view_win = tk.Toplevel()
     view_win.title("Video Parameters")
+
+    # Setting the default blur kernel size
+    globalvars.blurVariableMain = tk.StringVar(view_win)
+    globalvars.blurVariableMain.set(6)  # default value
+    if hasattr(globalvars, 'blurVariablePreview'):
+        globalvars.blurVariableMain.set(globalvars.blurVariablePreview.get())
+
+    # Choosing Blur level
+    input1 = tk.Label(view_win, text="Blur level")
+    input1.grid(row=0, column=0)
+
+    blurOption = tk.OptionMenu(view_win, globalvars.blurVariableMain, 2, 6, 10, 20, 30, 40, 50, 100)
+    blurOption.grid(row=0, column=1)
 
     # Button to Pre-process and Run application
     runApp_but = tk.Button(view_win, text="Process Video", width=10, command=application)
@@ -42,13 +53,14 @@ def preview(window):
     pv_win = tk.Toplevel()
     pv_win.title("Preview Parameters")
 
+    # Setting the default blur kernel size
+    globalvars.blurVariablePreview = tk.StringVar(pv_win)
+    globalvars.blurVariablePreview.set(6)  # default value
+
     input1 = tk.Label(pv_win, text="Choose the blur level")
     input1.grid(row=0, column=0)
 
-    globalvars.blurVariable = tk.StringVar(pv_win)
-    globalvars.blurVariable.set(6)  # default value
-
-    blurOption = tk.OptionMenu(pv_win, globalvars.blurVariable, 2, 6, 10, 20, 30, 40, 50, 100)
+    blurOption = tk.OptionMenu(pv_win, globalvars.blurVariablePreview, 2, 6, 10, 20, 30, 40, 50, 100)
     blurOption.grid(row=0, column=1)
 
     # Button to display preview
