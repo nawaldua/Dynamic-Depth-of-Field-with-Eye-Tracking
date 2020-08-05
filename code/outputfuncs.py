@@ -1,12 +1,13 @@
-<<<<<<< Updated upstream
-=======
 # Import required libraries
->>>>>>> Stashed changes
+import glob
+import winsound
+
 import cv2 as cv
 import globalvars
 import numpy as np
 from blurproc import foccal, newmaskimg, renderopfast
 from iploader import read_inputs
+import time
 
 
 # Function to capture mouse move event in OpenCV output
@@ -23,6 +24,26 @@ def output_win():
     globalvars.posx = 0
     globalvars.posy = 0
 
+    if hasattr(globalvars, "video_folder"):
+        video_folder_path = globalvars.video_folder
+        frame_path = globalvars.video_folder + "/{:0>5}_{}.jpg"
+        depthmap_path = globalvars.video_folder + "/{:0>5}.npy"
+        audio_name = glob.glob1(video_folder_path + "/audio/", "*.wav")
+        audio_path = video_folder_path + '/audio/' + audio_name[0]
+        print(audio_path)
+
+    elif hasattr(globalvars, "dirr"):
+        video_folder_path = globalvars.dirr + '/code/outputs/'
+        frame_path = "outputs/{:0>5}_{}.jpg"
+        depthmap_path = "outputs/{:0>5}.npy"
+        audio_name = glob.glob1(video_folder_path + "audio/", "*.wav")
+        audio_path = video_folder_path + "audio/" + audio_name[0]
+        print(audio_path)
+
+    else:
+        print("No Directory or Video Folder chosen")
+        return
+
     # Declaring the output window
     cv.namedWindow('output')
 
@@ -36,27 +57,32 @@ def output_win():
     i = 0
     blur_area = 9
 
-    if not globalvars.imarr:
-        read_inputs()
+    # Identify the total number of frames to be displayed
+    frame_counter = len(glob.glob1(video_folder_path, "*.npy"))
+    frame = cv.imread(frame_path.format(i, blur_area))
+
+    # Asynchronously start playing background music
+    winsound.PlaySound(audio_path, winsound.SND_LOOP + winsound.SND_ASYNC | winsound.SND_ALIAS)
 
     # Continuous looping across all frames
-    while i < len(globalvars.imarr):
-        # Update frame
-        frame = cv.imread("outputs/{:0>5}_{}.jpg".format(i, blur_area))
+    while True:
+        # Display Frame
         cv.imshow('output', frame)
-
-        # Restrict output to 25 fps
-        # time.sleep(0.04)
 
         # Increment frame counter
         i += 1
-
         # Facilitate looping of video
-        if i == len(globalvars.imarr):
+        if i == frame_counter:
             i = 0
+        # Update frame
+        frame = cv.imread(frame_path.format(i, blur_area))
+
+        # # Restrict output to 25 fps
+        # time.sleep(0.04)
+        # # Time delay commented for 1080p video
 
         # Compensate for outlier values generated during mask generation
-        temp_array = np.load("outputs/{:0>5}.npy".format(i))
+        temp_array = np.load(depthmap_path.format(i))
         comp_var = np.uint8(temp_array[globalvars.posy][globalvars.posx])
         if comp_var < 10:
             blur_area = comp_var
@@ -65,6 +91,7 @@ def output_win():
         if cv.waitKey(20) & 0xFF == 27:
             break
 
+    winsound.PlaySound(None, winsound.SND_ASYNC)
     cv.destroyAllWindows()
 
     return
@@ -73,8 +100,8 @@ def output_win():
 # Code to generate data for the Preview function
 def genpreview(blurfac):
     # Initialize with the data for the first frame
-    globalvars.img = cv.imread(globalvars.dirr + '/(01).jpg')
-    globalvars.arr1 = np.load(globalvars.dirr + '/(01).npy')
+    globalvars.img = cv.imread(globalvars.dirr + '/data/00000.jpg')
+    globalvars.arr1 = np.load(globalvars.dirr + '/data/00000.npy')
 
     if not globalvars.imarr:
         read_inputs()
@@ -85,17 +112,19 @@ def genpreview(blurfac):
 
     # Initialize and generate user requested blur levels(blurfac) for each of the 10 depth zones
     blarrs = []
+    variance = float(globalvars.blur_falloff_preview.get())
     for i in range(10):
-        blarrs.append(foccal(minar + i * step, step, minar))
+        blarrs.append(foccal(minar + i * step, step, minar, variance))
 
     blurimages, masks, globalvars.lup_tab = newmaskimg(globalvars.imarr[0], globalvars.npyarr[0], blurfac)
     globalvars.opims = renderopfast(blurimages, blarrs, globalvars.imarr[0], masks)
     return
 
+
 # Display function for the Preview function
 def preview_win():
     # Obtain user required blur level from the drop-down menu
-    blurfac = int(globalvars.blurVariable.get())
+    blurfac = int(globalvars.blurVariablePreview.get())
     # Generate the requested blur level for each of the 10 depth zones
     genpreview(blurfac)
     # Initialize mouse pointer positions
