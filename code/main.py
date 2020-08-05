@@ -12,10 +12,7 @@ def main():
     window.config(background="#FFFFFF")
 
     globalvars.lbl1 = tk.StringVar()
-    globalvars.lbl2 = tk.StringVar()
-
     globalvars.lbl1.set("Choose the required Directory")
-    globalvars.lbl2.set("Choose a Video Folder")
 
     # Button to choose Video directory with the .jpg and .npy files
     but_direc = tk.Button(window, text="Directory", width=10, command=browse_directory)
