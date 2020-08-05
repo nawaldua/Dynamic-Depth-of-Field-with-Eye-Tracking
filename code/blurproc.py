@@ -6,10 +6,11 @@ import globalvars
 import numpy as np
 
 
-def foccal(pt, step, minar):
+def foccal(pt, step, minar, variance):
     stepar = []
     opar = []
-    varwin = 4.5 * step / ((2 * math.pi) ** 0.5)
+
+    varwin = variance * step / ((2 * math.pi) ** 0.5)
     for i in range(1, 12):
         x = minar + (i - 1) * step
 
@@ -23,6 +24,7 @@ def foccal(pt, step, minar):
     focar = np.round(np.max(foclist) - foclist)
     for i in range(0, 10):
         gpar.append(2 * int(focar[i]) + 1)
+
     return gpar
 
 
@@ -61,7 +63,6 @@ def newmaskimg(image, array, blurparam):
     imar = []
     for i in range(4):
         imar.append(cv.GaussianBlur(image, (blurparam * i + 1, blurparam * i + 1), 0))
-
     return imar, masks, temp_table
 
 
