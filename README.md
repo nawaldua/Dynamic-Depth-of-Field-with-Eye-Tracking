@@ -39,20 +39,25 @@ Download this repository and run ```/code/main.py```
 NOTES: In the GUI, choose the ‘Dynamic-Depth-of-Field-with-Eye-Tracking’ folder (project folder) as the directory as it contains the required input frames and depth maps data.
 The functions in the ‘outputfuncs.py’ file are accessed/executed by clicking the following buttons from the main window: 
 To access the Preview function and to choose the variance and blurring parameters for processing the video
+
 1. Directory --> Preview --> Generate
 (Access ‘mouse_move’, ‘genpreview’, ‘preview_win’)
+
 OR
+
 To process a new video based on required parameters
 2. Directory --> View Video --> Process Video --> Output Video
 (Access ‘mouse_move’, ‘output_win’)
+
 OR
+
 To view a previously processed video
 (Picks the default output folder)
 3. Directory --> View Video --> Output Video
 (For picking a different output folder)
 4. Directory(Optional Step) --> View Video --> Output Folder --> Output Video
 
-The Process Video step will take anywhere from 30 to 200 seconds, please check the python console for progress
+The Process Video step will take anywhere from 30 to 200 seconds for a 480p resolution video, please check the python console for progress
 
 
 List of libraries required are :
