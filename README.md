@@ -66,11 +66,6 @@ List of libraries required are :
 7.	copy
 8.	math
 
-
-## Usage
-
-TODO: Information about how to get code to run, what data to use and the steps to do everything
-
 ## Further Information
 
 For a camera, Depth of Field(DoF) is the distance between the nearest and farthest object in focus.
@@ -83,7 +78,7 @@ subjects. Mobile phone videos do not have this positioning planned beforehand an
 have a wide DoF as the default. Mobile phone camera’s don’t have readily available interchangeable
 lenses either, preventing daily users to use the optimal lens for the subject.
 
-To learn more about the project you can look at our [Project Proposal](Group1-Finalized_Project_Proposal.pdf) or our [Final Project Report]()
+To learn more about the project you can look at our [Project Proposal](Group1-Finalized_Project_Proposal.pdf) or our [Final Project Report](Final_Project_Report_Group_1.pdf)
 
 ## Credits
 
