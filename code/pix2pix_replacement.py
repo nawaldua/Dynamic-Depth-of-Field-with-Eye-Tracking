@@ -47,26 +47,28 @@ def run_and_save_DAVIS(self, input_, targets, save_path):
         disparity = disparity / np.max(disparity)
 
         ################### EDITS ####################
+        # ## .csv file save
+        # output_path_disparity_csv = youtube_dir + '/' + \
+        #                             targets['img_1_path'][i].split('/')[-1][:-4] + '.csv'
+        # # print(output_path_disparity_csv)
+        # np.savetxt(output_path_disparity_csv, disparity, delimiter=',')
         ## .npy binary file save
         output_path_disparity = youtube_dir + '/' + \
                                 targets['img_1_path'][i].split('/')[-1][:-4] + '.npy'
         # print(output_path_disparity)
         disparity = np.tile(np.expand_dims(disparity, axis=-1), (1, 1, 3))
         np.save(output_path_disparity, disparity)
-        ################# EDIT ENDS ##################
 
         ### Output Image has Comparison between original and depth map
         # saved_imgs = np.concatenate((saved_img, disparity), axis=1)
         # saved_imgs = (saved_imgs*255).astype(np.uint8)
 
-
-        ################### EDITS ####################
         ### Output Image only has Depth Map
         # saved_imgs = (disparity * 255).astype(np.uint8)
-
         ### Output Image only has original image
-        saved_imgs = saved_img
-        saved_imgs = (saved_imgs * 255).astype(np.uint8)
-        ################# EDIT ENDS ##################
+        # saved_imgs = saved_img
+        # saved_imgs = (saved_imgs * 255).astype(np.uint8)
+        # saved_imgs = (saved_imgs).astype(np.uint8)
 
-        imsave(output_path, saved_imgs)
+        # imsave(output_path, saved_imgs)
+        ################# EDIT ENDS ##################
