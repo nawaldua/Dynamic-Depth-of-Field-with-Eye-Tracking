@@ -40,7 +40,7 @@ NOTES: In the GUI, choose the ‘Dynamic-Depth-of-Field-with-Eye-Tracking’ fol
 The functions in the ‘outputfuncs.py’ file are accessed/executed by clicking the following buttons from the main window:    
 
 
-1. To access the Preview function and to choose the variance and blurring parameters for processing the video
+1. To access the Preview function and to choose the variance and blurring parameters for processing the video  
 Directory --> Preview --> Generate  
 (Access ‘mouse_move’, ‘genpreview’, ‘preview_win’)  
 OR  
